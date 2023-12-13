@@ -1,0 +1,16 @@
+{
+    "name": "Client App",
+    "short_name": "Client",
+    "description": "Your app description",
+    "version": "0.1.0",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "permissions": [],
+    "offline": false,
+    "scope": "/",
+    "related_applications": [],
+    "prefer_related_applications": false
+  }
+  

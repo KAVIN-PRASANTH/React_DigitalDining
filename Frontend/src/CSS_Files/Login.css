@@ -1,0 +1,231 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+.register{
+   cursor: pointer;
+   color: red;
+  text-decoration: "underline";
+  transition: .3s;
+}
+.register:hover{
+ letter-spacing: 1px;
+ text-decoration: underline;
+}
+.login_container_box{
+  background-image: url('../Pictures/login.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.font_style {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.box_style{
+  padding:6px 5px ;
+}
+.Input_box,select {
+  outline: none;
+  border: none;
+  float: left;
+}
+
+#error_message{
+  color: red;
+ 
+}
+
+
+i {
+  position: absolute;
+}
+
+.forget_box {
+  
+  transition: .2s;
+  cursor: pointer;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.forget_box:hover {
+ color: blue;
+  letter-spacing: 1px;
+}
+
+
+#img_box {
+  width: 150px;
+  height: 130px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px white;
+}
+.align_center {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  text-align: center;
+  font-size: 40px;
+  padding: 10px 0;
+  border-bottom: 3px solid white;
+  border-radius: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.header div span {
+  position: absolute;
+  letter-spacing: 2px;
+  overflow: hidden;
+  margin-left: -10px;
+  color: rgb(235, 12, 12);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* .social_media_icon{
+    width: 40px;
+    border-radius: 50%;
+    height: 40px;
+    transition:.5s;
+   
+  }
+  .socialmedia_box{
+    align-items: center;
+    display: inline-block;
+    padding: 0 10px;
+  }
+  .social_media_icon:hover{
+    width: 50px;
+    height: 50px;
+  }
+  .socialmedia_container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }*/
+/* .icon_box{ 
+    position:absolute;
+    width: 80px;
+    height: 80px;
+  } */
+/* #header_id2 {
+  margin-left: -160px;
+  margin-top: -80px;
+}
+
+#header_id1 {
+  margin-left: 90px;
+  margin-top: -20px;
+}
+
+.header span:nth-child(1) {
+  animation: header 6s ease;
+}
+
+.header span:nth-child(2) {
+  animation: header 5s ease;
+}
+
+.header span:nth-child(3) {
+  animation: header 4s ease;
+}
+
+.header span:nth-child(4) {
+  animation: header 3s ease;
+}
+
+.header span:nth-child(5) {
+  animation: header 2s ease;
+}
+
+.header span:nth-child(6) {
+  animation: header 1s ease;
+} */
+/* 
+@keyframes header {
+  from {
+    margin-left: -1000px;
+    opacity: 0;
+  }
+
+  to {
+    margin-right: 1000px;
+    opacity: 1;
+    transform: rotate(360deg);
+
+  }
+
+} */
+.Tick_style{
+  width:20px;
+  height:25px;
+  margin-left:20px;
+  display:none
+  
+}
+.Wrong_style{
+  width:30px;
+  height:22px;
+  margin-left:20px;
+  display:none
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Works for Firefox */
+input[type="number"] {
+  appearance: textfield;
+}
+input:not[type="submit"] {
+  color:white;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 5px;
+}
+input:-webkit-autofill {
+  color:white;
+  -webkit-box-shadow: 0 0 0 1000px rgb(78, 79, 78) inset !important;
+}
+.popup_img_rotate{
+  animation: popuprotate 3s 2 ease;
+}
+@keyframes popuprotate {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    transform: rotateY(360deg);
+  }
+}
+
+/* To avoid color changes in input box*/
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  background-color: white !important;
+  color: inherit !important;
+}
+input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  background-color: white !important;
+  color: inherit !important;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  background-color: white !important;
+  color: inherit !important;
+}
