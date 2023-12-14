@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ModifyItem from "../Components/ModifyItem";
 import AdminHeader from "../Components/AdminHeader";
+import Swal from "sweetalert2";
 
 
 function AdminModifyDetails() {

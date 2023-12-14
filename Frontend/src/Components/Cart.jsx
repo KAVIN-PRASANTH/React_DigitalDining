@@ -27,7 +27,7 @@ function Cart() {
         let netAmount = 0;
         iteamName = `<table class="col-12"><tr style="text-align:center">
         
-         <th>Iteam</th>
+         <th>Item</th>
          <th>Price</th>
          <th>Quantity</th>
          <th>Amount</th>

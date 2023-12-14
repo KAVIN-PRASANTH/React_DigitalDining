@@ -252,15 +252,14 @@ function Register() {
                         {userEmailerr && <div><ErrorBox message="Enter valid email" /></div>}
                         {emailExistErr && <div><ErrorBox message="Email Already Exist!" /></div>}
                         <div style={{ display: 'none' }} id="reg-otpbox-display"><br />
-                            <h7 className="otp_text_style">Enter OTP sent to your E-mail</h7>
+                            <h7 className="otp_text_style">Enter the OTP sent to your email</h7>
                             <Otp prefixName="Email" setId1="Email1" setId2="Email2" setId3="Email3" setId4="Email4" setId5="Email5" />
                             {otpMessageErr && <div className="py-1 col-10"><ErrorBox message="OTP did not match" /></div>}
                         </div>
-
                         <div style={{ display: 'none', transition: "1s" }} id="reg-password-container"><br />
                             <Password placeHolderName=" Password" setId="registerPassword" setIdTickImg="Pass_tickimg" setIdWrongImg="Pass_wrongimg" />
                             {userPasserr && <div><ErrorBox message="Password length must be greater than 6 characters" /></div>}<br/>
-                            <Password placeHolderName=" Conform Password" setId="registerConformPassword" setIdTickImg="ConformPass_tickimg" setIdWrongImg="ConformPass_wrongimg" />
+                            <Password placeHolderName=" Confirm Password" setId="registerConformPassword" setIdTickImg="ConformPass_tickimg" setIdWrongImg="ConformPass_wrongimg" />
                             {userConformPasserr && <div><ErrorBox message="Password did not match" /></div>}
                             <div align="center" onClick={(e) => registerData(e)} className="pt-3">
                                 {loadingRegisterBtn ? <LoadingButton css="btn btn-success col-12 font_style" /> : <button className='btn btn-success col-10 font_style' style={{ fontSize: "larger", fontWeight: "500" }}>Register</button>}

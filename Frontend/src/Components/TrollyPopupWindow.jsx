@@ -26,7 +26,7 @@ function TrollyPopupWindow() {
                 if (response.razorpay_payment_id) {
                     let maxToken = 0;
                     let email = "";
-                    await axios.post("https://digitaldining.onrender.com/api/fetchMaxToken", { id: localStorage.getItem("token") }).then((message) => {
+                    await axios.post("http://localhost:8000/api/fetchMaxToken", { id: localStorage.getItem("token") }).then((message) => {
                         if (message.data.token.length === 0)
                             maxToken = 1;
                         else
@@ -35,7 +35,7 @@ function TrollyPopupWindow() {
                     }).catch((message) => {
                         console.log(message);
                     })
-                    await axios.post("https://digitaldining.onrender.com/api/paymentDetails", { id: localStorage.getItem("token"), token: maxToken, payment_id: response.razorpay_payment_id, netAmountBackend: netAmountBackend, payment_status: "success" }).then((message) => {
+                    await axios.post("http://localhost:8000/api/paymentDetails", { id: localStorage.getItem("token"), token: maxToken, payment_id: response.razorpay_payment_id, netAmountBackend: netAmountBackend, payment_status: "success" }).then((message) => {
                     }).catch((message) => {
                         console.log(message);
                     })
@@ -46,7 +46,7 @@ function TrollyPopupWindow() {
                         orderListValues += `${email},${maxToken},'${iteamNameBackend[count]}',${quantityBackend[count]},${priceBackend[count]},${totalAmountBackend[count]}),`;
                     }
                     orderListValues = orderListValues.substring(0, orderListValues.length - 1) + ";";
-                    await axios.post("/api/orderedItemDetails", { orderListValues }).then((message) => {
+                    await axios.post("http://localhost:8000/api/orderedItemDetails", { orderListValues }).then((message) => {
                         document.getElementById("total_iteam_count").innerText = "0";
                         navigate("/History")
                     }).catch((message) => {

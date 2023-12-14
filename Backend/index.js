@@ -235,7 +235,7 @@ app.post("/api/fetchMaxToken", (req, res) => {
 
 //updating all the ordered food records in db
 app.post("/api/orderedItemDetails", (req, res) => {
-  const query = `insert into  ordered_items values${req.body.orderListValues}`;
+  const query = `insert into  ordered_items(email, token, item_Name, quantity, price, total_price)  values${req.body.orderListValues}`;
   db.query(query, (err, result) => {
     if (err) {
       console.log(err);
@@ -257,7 +257,7 @@ app.post("/api/paymentDetails", (req, res) => {
     }
     else {
       let email = decoded.id;
-      const query = "insert into  payment_details values(?,?,?,?,?,?,?)";
+      const query = "insert into  payment_details(email, token, net_amount, payment_id, date, time, status) values(?,?,?,?,?,?,?)";
       db.query(query, [email, data.token, data.netAmountBackend, data.payment_id, date, time, data.payment_status], (err, result) => {
         if (err) {
           console.log(err);

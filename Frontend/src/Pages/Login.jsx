@@ -278,7 +278,7 @@ function Login() {
                         }
                     </div>
                     <div align="center">
-                        <span className='small text-white' > Don't have any account?</span><span onClick={() => { navigate('/Register') }} className=' font_style register'>Register</span>
+                        <span className='small text-white' > Don't have an account?</span><span onClick={() => { navigate('/Register') }} className=' font_style register'>Register</span>
                         <br />   <br />
                     </div>
                 </div>
