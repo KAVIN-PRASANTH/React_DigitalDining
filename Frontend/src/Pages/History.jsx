@@ -3,11 +3,11 @@ import "../CSS_Files/History.css";
 import axios from "axios";
 import HistoryTable from "../Components/HistoryTable";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+
 
 function History() {
     const [details, setDetails] = useState([]);
-    const navigate = useNavigate();
+    
 
     async function getMaxToken() {
         let id = localStorage.getItem("token");
@@ -92,11 +92,7 @@ function History() {
                     </div>)
                 })}
             </div>
-            <center>
-                <button className="btn btn-primary" onClick={()=>navigate("/FoodPage")}>
-                    Go back
-                </button>
-            </center>
+            
         </div>
     )
 }
