@@ -93,7 +93,7 @@ function HistoryTable(props) {
                         else {
                             return (
                                 <tr style={{ fontWeight: "bolder", backgroundColor: "white" }}>
-                                    <td colSpan={1} className="text-center"><button style={{ cursor: "pointer" }} className="btn btn-success col-sm-10 col-12 rounded" onClick={openQRCode}>Scan QR</button></td>
+                                    <td colSpan={1} className="text-center"><button style={{ cursor: "pointer" }} className="btn btn-success col-sm-8 col-10 rounded" onClick={openQRCode}>Scan QR</button></td>
                                     <td colSpan={2} className="text-right" >Net Amount:</td>
                                     <td>{data.net_amount}</td>
                                 </tr>

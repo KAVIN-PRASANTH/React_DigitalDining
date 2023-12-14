@@ -3,17 +3,22 @@ import "../CSS_Files/History.css";
 import axios from "axios";
 import HistoryTable from "../Components/HistoryTable";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function History() {
     const [details, setDetails] = useState([]);
+    const navigate = useNavigate();
 
     async function getMaxToken() {
         let id = localStorage.getItem("token");
         await axios.post("https://digitaldining.onrender.com/api/fetchMaxToken", { id }).then((message) => {
             let maxToken = 0;
             if (message.data.token.length === 0) {
-                alert("nothing to show");
-
+                Swal.fire({
+                    title: 'No items purchased',
+                    icon: 'info',
+                    confirmButtonText: 'OK',
+                  });
             }
             else {
                 maxToken = Number(message.data.token[0].max);
@@ -87,6 +92,11 @@ function History() {
                     </div>)
                 })}
             </div>
+            <center>
+                <button className="btn btn-primary" onClick={()=>navigate("/FoodPage")}>
+                    Go back
+                </button>
+            </center>
         </div>
     )
 }

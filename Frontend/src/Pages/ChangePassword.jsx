@@ -92,7 +92,7 @@ function ChangePass() {
                         <Password placeHolderName="New Password" setId="registerPassword" setIdTickImg="Pass_tickimg" setIdWrongImg="Pass_wrongimg" />
                         {userPasserr && <div><ErrorBox message="Password length must be greater than 6 characters" /></div>}
                         <br />
-                        <Password placeHolderName="Conform Password" setId="registerConformPassword" setIdTickImg="ConformPass_tickimg" setIdWrongImg="ConformPass_wrongimg" />
+                        <Password placeHolderName="Confirm Password" setId="registerConformPassword" setIdTickImg="ConformPass_tickimg" setIdWrongImg="ConformPass_wrongimg" />
                         {userConformPasserr && <div><ErrorBox message="Password did not match" /></div>}
                         <br />
                         <div align="center" onClick={(e) => ChangePassword(e)}>

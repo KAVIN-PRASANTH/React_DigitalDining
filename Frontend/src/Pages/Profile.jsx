@@ -61,7 +61,7 @@ function Profile() {
     function qrCodeDisplay() {
         const qrCodeHtml = ReactDOMServer.renderToString(<QRCode value={email} size={100} />)
         Swal.fire({
-            title: 'Your QR Code',
+            title: 'Your Profile QR Code',
             html: qrCodeHtml,
         });
     }
