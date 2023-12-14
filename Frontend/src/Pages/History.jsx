@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../CSS_Files/History.css";
 import axios from "axios";
 import HistoryTable from "../Components/HistoryTable";
-
+import Swal from "sweetalert2";
 
 function History() {
     const [details, setDetails] = useState([]);

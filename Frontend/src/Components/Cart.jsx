@@ -60,7 +60,7 @@ function Cart() {
     }
     return (
         <div className=" d-flex justify-content-center align-items-center trolly_cart deactivate" id="cart_container" style={{ cursor: "pointer" }} onClick={CartClick}>
-            <i class="fa-solid fa-cart-shopping"></i>
+            <i className="fa-solid fa-cart-shopping"></i>
             <span id="total_iteam_count" className="d-flex justify-content-center align-items-center">0</span>
         </div>
     );
