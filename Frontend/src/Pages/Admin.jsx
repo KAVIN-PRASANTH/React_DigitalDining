@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 function Admin() {
     async function LoadContent() {
-        await axios.get('/api/admin').then((data) => {
+        await axios.get('https://digitaldining.onrender.com/api/admin').then((data) => {
             let result = data.data;
             for (let i = 0; i < result.length; i++) {
                 let email = result[i].email;
@@ -68,7 +68,7 @@ function Admin() {
         });
     }
     async function AccountSettings(requestType, email) {
-        await axios.patch("/api/account_management", { requestType, email }).then((data) => {
+        await axios.patch("https://digitaldining.onrender.com/api/account_management", { requestType, email }).then((data) => {
             if (data.status === 200) {
                 Swal.fire({
                     title: 'Success!',

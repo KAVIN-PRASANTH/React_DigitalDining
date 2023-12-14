@@ -115,7 +115,7 @@ function Register() {
             setLoadingSendOtpBtn(true);
             let length = 0;
 
-            await axios.post("/api/isExistEmail", { emailName }).then((message) => {
+            await axios.post("https://digitaldining.onrender.com/api/isExistEmail", { emailName }).then((message) => {
                 length = message.data.length;
             }).catch((error) => {
                 console.log(error, "Error");
@@ -135,7 +135,7 @@ function Register() {
                 Email_tickimg.style.display = "block";
                 Email_wrongimg.style.display = "none";
                 setEmailExistErr(false);
-                await axios.post('/api/sendEmail', { emailName, randomNumber: randomNumber }).then(res => {
+                await axios.post('https://digitaldining.onrender.com/api/sendEmail', { emailName, randomNumber: randomNumber }).then(res => {
                   
                     setLoadingSendOtpBtn(false);
                     popup_register_container.style.marginTop = "0";
@@ -201,7 +201,7 @@ function Register() {
             setLoadingRegisterBtn(true);
             let passwordName = document.getElementById("registerPassword").value;
             e.preventDefault();
-            await axios.post('/api/registerData', { emailName: emailName, pass: passwordName }).then((message) => {
+            await axios.post('https://digitaldining.onrender.com/api/registerData', { emailName: emailName, pass: passwordName }).then((message) => {
                 if (message.data.affectedRows === 1) {
                     Swal.fire({
                         icon: 'success',

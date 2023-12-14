@@ -58,7 +58,7 @@ function ModifyItem(props) {
     }).then(async (result) => {
       if (result.isConfirmed) {
         let item_name = document.getElementById(`${nameId}`).value;
-        await axios.delete(`/api/delete_foodItem${item_name}`).then((message) => {
+        await axios.delete(`https://digitaldining.onrender.com/api/delete_foodItem${item_name}`).then((message) => {
           if (message.data.affectedRows === 1) {
             Swal.fire(
               'Deleted!',
@@ -144,7 +144,7 @@ function ModifyItem(props) {
         if (result.isConfirmed) {
           if (file === null) {
             setLoader(true);
-           await axios.patch("/api/modify_food_details_WithoutImg", { oldName: data.item_name, itemName: item_name.value.trim(), fromTime, toTime, price, category}).then((message) => {
+           await axios.patch("https://digitaldining.onrender.com/api/modify_food_details_WithoutImg", { oldName: data.item_name, itemName: item_name.value.trim(), fromTime, toTime, price, category}).then((message) => {
             if (message.data.affectedRows === 1) {
               Swal.fire({
                 icon: "success",
@@ -201,7 +201,7 @@ function ModifyItem(props) {
               }
           })
           }
-          await axios.post('/api/modify_food_details_withImage', { oldName: data.item_name, itemName, price, category, fromTime, toTime, file_path: `files/${data.id}.${extension}` }).then((message) => {
+          await axios.post('https://digitaldining.onrender.com/api/modify_food_details_withImage', { oldName: data.item_name, itemName, price, category, fromTime, toTime, file_path: `files/${data.id}.${extension}` }).then((message) => {
             if(message.data.updated)
             {
               Swal.fire({

@@ -8,7 +8,7 @@ function AdminModifyDetails() {
     
     const [modifyDetails, setModifyDetails] = useState([]);
     async function LoadDetails() {
-        await axios.get("/api/fetch_modifyDetails").then((message) => {
+        await axios.get("https://digitaldining.onrender.com/api/fetch_modifyDetails").then((message) => {
             setModifyDetails(message.data);
         }).catch((error) => {
             console.log(error);

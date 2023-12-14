@@ -61,7 +61,7 @@ function ForgetPassword() {
         else {
 
             let length = 0;
-            await axios.post("api/isExistEmail", { emailName: emailName }).then((message) => {
+            await axios.post("https://digitaldining.onrender.com/api/isExistEmail", { emailName: emailName }).then((message) => {
                 length = message.data.length;
             })
             if (length > 0) {
@@ -70,7 +70,7 @@ function ForgetPassword() {
                 let loginEmail = document.getElementById("loginEmail");
                 loginEmail.setAttribute("disabled", "disabled");
                 loginEmail.style.cursor = "not-allowed";
-                await axios.post('api/sendEmail', { emailName: emailName, randomNumber: randomNumber }).then(res => {
+                await axios.post('https://digitaldining.onrender.com/api/sendEmail', { emailName: emailName, randomNumber: randomNumber }).then(res => {
                     Swal.fire({
                         icon: "success",
                         text: "OTP Send successfully"

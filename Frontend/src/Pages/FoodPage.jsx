@@ -26,7 +26,7 @@ function FoodPage() {
     setDisplayJuice(false);
     setDisplayBeverages(false);
     setDisplaySnacks(false);
-    await axios.post("/api/fetch_food_details", { Category: "Food" }).then((message) => {
+    await axios.post("https://digitaldining.onrender.com/api/fetch_food_details", { Category: "Food" }).then((message) => {
       let data = message.data;
       setFood(DataStoring(data));
     }).catch((error) => {
@@ -47,7 +47,7 @@ function FoodPage() {
     setDisplayJuice(true);
     setDisplayBeverages(false);
     setDisplaySnacks(false);
-    await axios.post("/api/fetch_food_details", { Category: "Juice" }).then((message) => {
+    await axios.post("https://digitaldining.onrender.com/api/fetch_food_details", { Category: "Juice" }).then((message) => {
       let data = message.data;
       setJuice(DataStoring(data));
     }).catch((error) => {
@@ -69,7 +69,7 @@ function FoodPage() {
     setDisplayJuice(false);
     setDisplayBeverages(true);
     setDisplaySnacks(false);
-    await axios.post("/api/fetch_food_details", { Category: "Beverages" }).then((message) => {
+    await axios.post("https://digitaldining.onrender.com/api/fetch_food_details", { Category: "Beverages" }).then((message) => {
       let data = message.data;
       setBeverage(DataStoring(data));
     }).catch((error) => {
@@ -90,7 +90,7 @@ function FoodPage() {
     setDisplayJuice(false);
     setDisplayBeverages(false);
     setDisplaySnacks(true);
-    await axios.post("/api/fetch_food_details", { Category: "Snacks" }).then((message) => {
+    await axios.post("https://digitaldining.onrender.com/api/fetch_food_details", { Category: "Snacks" }).then((message) => {
       let data = message.data;
       setSnacks(DataStoring(data));
     }).catch((error) => {
@@ -125,7 +125,7 @@ function FoodPage() {
     return food_container_details;
   }
   async function authentication() {
-    await axios.post("/foodPageAuthentication", { token: localStorage.getItem("token") }).then((message) => {
+    await axios.post("https://digitaldining.onrender.com/foodPageAuthentication", { token: localStorage.getItem("token") }).then((message) => {
       let data = message.data;
       if (!data.auth) {
         Swal.fire({
@@ -208,7 +208,7 @@ function FoodPage() {
                     if (result.isConfirmed) {
                         const confirmPin = result.value;
                         if (pin === confirmPin) {
-                            await axios.post("/api/update_payment_pin", { loginEmail: data.email, pin: pin })
+                            await axios.post("https://digitaldining.onrender.com/api/update_payment_pin", { loginEmail: data.email, pin: pin })
                                 .then((response) => {
                                     let data = response.data;
                                     if (data.auth && data.results.affectedRows === 1) {

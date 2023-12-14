@@ -26,7 +26,7 @@ function Login() {
     async function EmailAuthentication() {
         let data = localStorage.getItem("token");
         if (data !== null) {
-            await axios.post("/api/emailAuthentication", { token: data }).then((message) => {
+            await axios.post("https://digitaldining.onrender.com/api/emailAuthentication", { token: data }).then((message) => {
                 if (message.data.auth) {
                     navigate("/FoodPage");
                 }
@@ -179,7 +179,7 @@ function Login() {
             let Pass_wrongimg = document.getElementById("Pass_wrongimg");
             loginEmail = loginEmail.trim().toLowerCase();
 
-            await axios.post("/api/fetch_login_details", { loginEmail, loginPassword }).then((message) => {
+            await axios.post("https://digitaldining.onrender.com/api/fetch_login_details", { loginEmail, loginPassword }).then((message) => {
                 const responseData = message.data;
                 if(responseData.access===false)
                 {

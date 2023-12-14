@@ -57,7 +57,7 @@ function AdminAddItem() {
             foodImage !== "" && addItemItemName !== "" && addItemPrice !== "" && addItemPrice > 0 && fromTime !== "" && toTime !== "") {
             setLoader(true);
 
-            await axios.post("/api/foodContainer_ItemName", { itemName: itemName }).then(async (message) => {
+            await axios.post("https://digitaldining.onrender.com/api/foodContainer_ItemName", { itemName: itemName }).then(async (message) => {
                 let data = message.data;
                 if (data.id === null)
                     data.id = 1;
@@ -70,7 +70,7 @@ function AdminAddItem() {
                 else {
                     const imgRef = ref(imageDb, `files/${data.id}.${extension}`)
                     uploadBytes(imgRef, file);
-                    axios.post('/api/upload_foodcontainer', { addItemItemName: addItemItemName.trim(), addItemPrice, addItemFoodType, fromTime, toTime, file_path: `files/${data.id}.${extension}` })
+                    axios.post('https://digitaldining.onrender.com/api/upload_foodcontainer', { addItemItemName: addItemItemName.trim(), addItemPrice, addItemFoodType, fromTime, toTime, file_path: `files/${data.id}.${extension}` })
                         .then((message) => {
                             if (message.data.affectedRows) {
                                 Swal.fire({

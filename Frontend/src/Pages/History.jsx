@@ -9,7 +9,7 @@ function History() {
 
     async function getMaxToken() {
         let id = localStorage.getItem("token");
-        await axios.post("/api/fetchMaxToken", { id }).then((message) => {
+        await axios.post("https://digitaldining.onrender.com/api/fetchMaxToken", { id }).then((message) => {
             let maxToken = 0;
             if (message.data.token.length === 0) {
                 alert("nothing to show");
@@ -34,7 +34,7 @@ function History() {
     }
     async function fetch(maxToken) {
         let id = localStorage.getItem("token");
-        await axios.post("/api/fetchHistoryDetails", { id }).then((message) => {
+        await axios.post("https://digitaldining.onrender.com/api/fetchHistoryDetails", { id }).then((message) => {
             let { itemDetails, paymentDetails } = message.data;
             if (paymentDetails.length !== 0) {
                 let detailArray = []

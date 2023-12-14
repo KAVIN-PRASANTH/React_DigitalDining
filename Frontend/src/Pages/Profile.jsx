@@ -15,7 +15,7 @@ function Profile() {
         authentication();
     }, []);
     async function authentication() {
-        await axios.post("/foodPageAuthentication", { token: localStorage.getItem("token") }).then((message) => {
+        await axios.post("https://digitaldining.onrender.com/foodPageAuthentication", { token: localStorage.getItem("token") }).then((message) => {
             let data = message.data;
             if (!data.auth) {
                 Swal.fire({
@@ -86,7 +86,7 @@ function Profile() {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 const password = Swal.getInput().value;
-                await axios.post("/api/profile_password_authentication", { loginEmail: email, loginPassword: password })
+                await axios.post("https://digitaldining.onrender.com/api/profile_password_authentication", { loginEmail: email, loginPassword: password })
                     .then((response) => {
                         if (response.data.auth) {
                             Swal.fire({
@@ -152,7 +152,7 @@ function Profile() {
                                         if (result.isConfirmed) {
                                             const confirmPin = result.value;
                                             if (pin === confirmPin) {
-                                                await axios.post("/api/update_payment_pin", { loginEmail: email, pin: pin })
+                                                await axios.post("https://digitaldining.onrender.comupdate_payment_pin", { loginEmail: email, pin: pin })
                                                     .then((response) => {
                                                         let data = response.data;
                                                         if (data.auth && data.results.affectedRows === 1) {

@@ -38,7 +38,7 @@ function HistoryTable(props) {
            if(result.isConfirmed)
            {
             let pin=result.value;
-            await axios.post("/api/verify_payment_pin",{pin,email:details[0].email}).then((message)=>{
+            await axios.post("https://digitaldining.onrender.com/api/verify_payment_pin",{pin,email:details[0].email}).then((message)=>{
                 let data=message;
                 if(data.data.auth)
                 {

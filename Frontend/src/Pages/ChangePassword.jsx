@@ -64,7 +64,7 @@ function ChangePass() {
     async function ChangePassword(e) {
         let passwordName = document.getElementById("registerPassword").value;
         e.preventDefault();
-        await axios.post('/api/update', { passwordName: passwordName, emailName: emailvariableToChangePassword }).then((message) => {
+        await axios.post('https://digitaldining.onrender.com/api/update', { passwordName: passwordName, emailName: emailvariableToChangePassword }).then((message) => {
             Swal.fire({
                 icon: "success",
                 text: "Password Changed successfully"
