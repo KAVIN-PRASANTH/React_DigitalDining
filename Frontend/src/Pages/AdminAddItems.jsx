@@ -57,7 +57,7 @@ function AdminAddItem() {
             foodImage !== "" && addItemItemName !== "" && addItemPrice !== "" && addItemPrice > 0 && fromTime !== "" && toTime !== "") {
             setLoader(true);
 
-            await axios.post("http://localhost:8000/api/foodContainer_ItemName", { itemName: itemName }).then(async (message) => {
+            await axios.post("https://digitaldining.onrender.com/api/foodContainer_ItemName", { itemName: itemName }).then(async (message) => {
                 console.log(message);
                 let data = message.data;
                 if (data.id === null)
@@ -69,10 +69,9 @@ function AdminAddItem() {
                     setLoader(false);
                 }
                 else {
-                    console.log(data.id);
                     const imgRef = ref(imageDb, `files/${data.id}.${extension}`)
                     uploadBytes(imgRef, file);
-                    await axios.post('http://localhost:8000/api/upload_foodcontainer', { addItemItemName: addItemItemName.trim(), addItemPrice, addItemFoodType, fromTime, toTime, file_path: `files/${data.id}.${extension}` })
+                    await axios.post('https://digitaldining.onrender.com/api/upload_foodcontainer', { addItemItemName: addItemItemName.trim(), addItemPrice, addItemFoodType, fromTime, toTime, file_path: `files/${data.id}.${extension}` })
                         .then((message) => {
                             if (message.data.affectedRows) {
                                 Swal.fire({
@@ -81,7 +80,7 @@ function AdminAddItem() {
                                 }).then((message) => {
                                     if (message.isConfirmed) {
                                         let myform = document.getElementById("myform");
-                                      
+                                        myform.reset();
                                         navigate('/AdminAddItem')
                                     }
                                 })
