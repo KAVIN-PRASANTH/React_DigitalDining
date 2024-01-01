@@ -151,6 +151,7 @@ app.post("/api/foodContainer_ItemName", (req, res) => {
       res.send(err);
     }
     else{
+      console.log(result);
       message.id = result[0].max;
     }
   })
@@ -163,6 +164,7 @@ app.post("/api/foodContainer_ItemName", (req, res) => {
     else {
       message.length = result.length;
       // console.log("message from kavin" + JSON.stringify(message));
+      console.log(message);
       res.send(message);
     }
   })
