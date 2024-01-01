@@ -150,8 +150,9 @@ app.post("/api/foodContainer_ItemName", (req, res) => {
       console.log(err);
       res.send(err);
     }
-    else
+    else{
       message.id = result[0].max;
+    }
   })
 
   db.query(query, [data.itemName], (err, result) => {
