@@ -30,7 +30,8 @@ function Profile() {
                 })
             }
             else {
-                setEmail(data.email);
+                let sp=data.email.split("@");
+                setEmail(sp[0]);
             }
         }).catch((error) => {
             console.log(error);
@@ -231,7 +232,7 @@ function Profile() {
                     </div>
                     <div align="center" className="h6" style={{ fontFamily: "monospace" }}>Welcome Back</div>
                     <div align="center" className="h2 py-2" style={{ fontFamily: "monospace" }}>
-                        {email.replace("@kce.ac.in", "")}
+                        {email}
                     </div>
                     <div align="start" className="col-12 h5  py-2 px-3 rounded row profile_inner_box" onClick={() => navigate("/ForgetPassword")} >
                         <div className="col-9 h6"><i class="fa-sharp fa-solid fa-key"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change Password</div>

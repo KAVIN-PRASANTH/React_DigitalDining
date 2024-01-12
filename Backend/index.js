@@ -144,14 +144,14 @@ app.post("/api/foodContainer_ItemName", (req, res) => {
   let data = req.body;
   const query = "select * from food_details where item_name=?";
   let message = {};
-  const max = "select max(id) as max from food_details ";
+  const max = "select max(id) as max from food_details";
   db.query(max, (err, result) => {
     if (err) {
       console.log(err);
       res.send(err);
     }
     else{
-      console.log(result);
+      
       message.id = result[0].max;
     }
   })
